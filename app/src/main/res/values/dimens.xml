@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="radioCardView">10dp</dimen>
+    <dimen name="elevacionCardView">4dp</dimen>
+    <dimen name="paddingCardV">16dp</dimen>
+    <dimen name="elevation_nivel4">4dp</dimen>
+    <dimen name="heightImagen">30dp</dimen>
+    <dimen name="textSize">25sp</dimen>
+    <dimen name="paddinText_right">10dp</dimen>
+    <dimen name="elevation_nivel6">6dp</dimen>
+    <dimen name="margenFAB">16dp</dimen>
+</resources>
