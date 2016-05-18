@@ -6,12 +6,12 @@
           android:title="@string/avOpcionA"
           android:icon="@drawable/ic_start"
           app:showAsAction="ifRoom|withText"/>
-    <item android:id="@+id/action_ranking"
-          android:title="@string/ranking"
+    <item android:id="@+id/action_contacto"
+          android:title="@string/opc_contacto"
           android:orderInCategory="100"
           app:showAsAction="never"/>
-    <item android:id="@+id/action_salir"
-          android:title="@string/salir"
+    <item android:id="@+id/action_acercaDe"
+          android:title="@string/opc_acerade"
           android:orderInCategory="200"
           app:showAsAction="never"/>
 </menu>

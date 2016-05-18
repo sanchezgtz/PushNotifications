@@ -1,6 +1,9 @@
 package com.sancheztech.mascota;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,14 +12,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sancheztech.mascota.adaptadores.MascotaAdapter;
+import com.sancheztech.mascota.adaptadores.PageAdapter;
+import com.sancheztech.mascota.fragment.PerfilFragment;
+import com.sancheztech.mascota.fragment.RecylerViewFragment;
+import com.sancheztech.mascota.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Mascota> mascotas;
-    private RecyclerView reciclador;
-    private RecyclerView.LayoutManager lManager;
-    private RecyclerView.Adapter adaptador;
+
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,28 +40,38 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        InicializaDatos();
-        CrearLista();
+
+        toolbar = (Toolbar) findViewById(R.id.toolBar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+
+        setUpViewPage();
+
+
+        if(toolbar != null)
+        {
+            setSupportActionBar(toolbar);
+        }
     }
 
-    private void CrearLista() {
-        reciclador = (RecyclerView) findViewById(R.id.rvMascotas);
-        lManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        reciclador.setLayoutManager(lManager);
-
-        adaptador = new MascotaAdapter(mascotas, this);
-        reciclador.setAdapter(adaptador);
+    private void setUpViewPage()
+    {
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_perfil);
     }
 
-    private void InicializaDatos() {
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(10, R.drawable.imgperro,"Fido" ));
-        mascotas.add(new Mascota(3, R.drawable.imgardilla,"Manchas" ));
-        mascotas.add(new Mascota(4, R.drawable.imgcaballo,"Filemon" ));
-        mascotas.add(new Mascota(0, R.drawable.imgconejo,"Copo de nieve" ));
-        mascotas.add(new Mascota(5, R.drawable.imgvenado,"Mido" ));
-        mascotas.add(new Mascota(6, R.drawable.imggallina,"Pancha" ));
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new  ArrayList<Fragment>();
+
+        fragments.add(new RecylerViewFragment());
+        fragments.add(new PerfilFragment());
+
+        return fragments;
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -63,10 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId())
         {
-            case R.id.action_salir:
-                finish();
+            case R.id.action_contacto:
+                Intent intentContacto = new Intent(this, ContactoActivity.class);
+                startActivityForResult(intentContacto, 1);
                 return  true;
-            case R.id.action_ranking:
+            case R.id.action_acercaDe:
+                Intent intentAcercaDe = new Intent(this, AcercaDeActivity.class);
+                startActivityForResult(intentAcercaDe, 2);
+                return true;
             case R.id.menu_rankin:
                 Intent intent = new Intent(this, RankinActivity.class);
                 startActivityForResult(intent, 0);

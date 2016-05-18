@@ -1,4 +1,4 @@
-package com.sancheztech.mascota;
+package com.sancheztech.mascota.adaptadores;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sancheztech.mascota.R;
+import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sancheztech.mascota.AcercaDeActivity">
+
+    <include android:id="@+id/miActionBar"
+             layout="@layout/actionbar">
+    </include>
+    <android.support.v7.widget.CardView
+        android:id="@+id/rvAcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/miActionBar"
+        android:elevation="@dimen/elevation_nivel4">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgFotoPer"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/ricardo"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/acercademiTitulo"
+                android:textSize="@dimen/titulo"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:layout_below="@+id/imgFotoPer"/>
+            <TextView
+                android:id="@+id/tvProfesional"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="@string/descripcion"
+                android:layout_below="@+id/tvTitulo"/>
+            <TextView
+                android:id="@+id/tvGustos"
+                android:layout_marginTop="16dp"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/descGustos"
+                android:layout_below="@+id/tvProfesional">
+            </TextView>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

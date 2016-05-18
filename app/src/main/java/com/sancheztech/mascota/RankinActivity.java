@@ -1,7 +1,5 @@
 package com.sancheztech.mascota;
 
-import android.app.ActionBar;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,10 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.util.Log;
+
+import com.sancheztech.mascota.adaptadores.MascotaAdapter;
+import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 

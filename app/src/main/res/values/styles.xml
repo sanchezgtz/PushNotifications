@@ -9,5 +9,12 @@
         <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
 
+    <style name="botonRaise" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/colorBlanco</item>
+        <item name="colorControlHighlight">@color/colorBlanco</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
 
+
+    <color name="colorBlanco">#ffffff</color>
 </resources>

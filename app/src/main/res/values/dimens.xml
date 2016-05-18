@@ -11,4 +11,6 @@
     <dimen name="paddinText_right">10dp</dimen>
     <dimen name="elevation_nivel6">6dp</dimen>
     <dimen name="margenFAB">16dp</dimen>
+    <dimen name="titulo">27dp</dimen>
+    <dimen name="mergen">25dp</dimen>
 </resources>

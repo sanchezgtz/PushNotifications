@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">Mascota</string>
-    <string name="salir">Salir</string>
-    <string name="ranking">Mejores Cinco</string>
     <string name="avOpcionA">Rankin</string>
+    <string name="opc_contacto">Contacto</string>
+    <string name="opc_acerade">Acerca de</string>
+    <string name="tieNombre">Nombre</string>
+    <string name="tieEmail">Correo electronico</string>
+    <string name="tieMensaje">Mensaje</string>
+    <string name="textoBoton">Send</string>
+    <string name="acercademiTitulo">Acerca de mi</string>
+    <string name="descripcion">Yo soy Ricardo Sánchez, soy ingeniero en sistema computacionales egresado
+        del Instituto Técnologico de Pachuca. Actualmente vivo en la Ciudad de México
+    he programdo en java, php, c++, sql. Actualmente uso Visual Studio WPF, c# y Xamarin.
+    </string>
+    <string name="descGustos">Mis temas de interes son el desarrollo mobil, los robots, la tecnología y la inteligencia artificial.
+        Soy casado y tengo una hermosa hija de 2 años de nombre Sofía.
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nombre_mascota">Fido</string>
+    <string name="subject">Correo de prueba Coursera, android</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.sancheztech.mascota;
+package com.sancheztech.mascota.pojo;
 
 /**
  * Created by rsanchezgu on 10/05/2016.

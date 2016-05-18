@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sancheztech.mascota.ContactoActivity">
+
+    <include android:id="@+id/miActionBar"
+             layout="@layout/actionbar">
+    </include>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/miActionBar">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txeNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tieNombre"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tilNombre">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txeEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tieEmail"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilMensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tilEmail">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/txeMensaje"
+            android:lines="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tieMensaje"/>
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:id="@+id/btnEnviar"
+        android:text="@string/textoBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tilMensaje"
+        android:theme="@style/botonRaise"
+        android:onClick="sendEmail"/>
+
+</RelativeLayout>
