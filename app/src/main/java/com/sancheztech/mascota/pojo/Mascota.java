@@ -5,11 +5,18 @@ package com.sancheztech.mascota.pojo;
  */
 public class Mascota {
 
-
+    private int id;
     private int raiting;
     private int foto;
     private String nombre;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getRaiting() {
         return raiting;
@@ -41,18 +48,7 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    /*@Override
-    public int compareTo(Mascota o) {
-        if(this.getRaiting() < o.getRaiting())
-        {
-            return -1;
-        }
+    public Mascota(){
 
-        if(this.getRaiting() > o.getRaiting())
-        {
-            return 1;
-        }
-
-        return 0;
-    }*/
+    }
 }

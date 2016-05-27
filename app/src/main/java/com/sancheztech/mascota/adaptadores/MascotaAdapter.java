@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sancheztech.mascota.R;
+import com.sancheztech.mascota.database.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
 
     private ArrayList<Mascota> mascotaLista;
     Activity activity;
+    private ConstructorContactos helper;
 
     public MascotaAdapter(ArrayList<Mascota> mascotaLista, Activity activity) {
         this.mascotaLista = mascotaLista;
@@ -31,13 +33,14 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
     @Override
     public mascotaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.mascota, parent, false);
+
         mascotaViewHolder mascota = new mascotaViewHolder(v);
         return mascota;
     }
 
     @Override
-    public void onBindViewHolder(mascotaViewHolder holder, int position) {
-        final Mascota mascota = mascotaLista.get(position);
+    public void onBindViewHolder(final mascotaViewHolder holder, int position) {
+        final Mascota mascota =  mascotaLista.get(position);
         holder.txtNombre.setText(mascota.getNombre());
         holder.tvRanking.setText(String.valueOf( mascota.getRaiting()));
         holder.imgFoto.setImageResource(mascota.getFoto());
@@ -54,7 +57,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "te gusta: " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Te gusta: " + mascota.getNombre(),
+                        Toast.LENGTH_SHORT).show();
+
+                helper = new ConstructorContactos(activity);
+                helper.darLikeMascota(mascota);
+
+                holder.tvRanking.setText( String.valueOf( helper.obtenerLikesMascota(mascota)));
             }
         });
     }

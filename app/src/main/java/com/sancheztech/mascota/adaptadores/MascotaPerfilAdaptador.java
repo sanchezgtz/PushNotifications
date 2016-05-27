@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sancheztech.mascota.R;
+import com.sancheztech.mascota.database.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class MascotaPerfilAdaptador  extends RecyclerView.Adapter<MascotaPerfilA
 
     private ArrayList<Mascota> mascotaLista;
     Activity activity;
+
 
     public MascotaPerfilAdaptador(ArrayList<Mascota> mascotaLista, Activity activity) {
         this.mascotaLista = mascotaLista;

@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sancheztech.mascota.adaptadores.MascotaAdapter;
+import com.sancheztech.mascota.database.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class RankinActivity extends AppCompatActivity {
     private RecyclerView reciclador;
     private RecyclerView.LayoutManager lManager;
     private RecyclerView.Adapter adaptador;
+    private ConstructorContactos helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +41,8 @@ public class RankinActivity extends AppCompatActivity {
 
     private void InicializaDatos() {
 
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(10, R.drawable.imgperro,"Fido" ));
-        mascotas.add(new Mascota(3, R.drawable.imgardilla,"Manchas" ));
-        mascotas.add(new Mascota(4, R.drawable.imgcaballo,"Filemon" ));
-        mascotas.add(new Mascota(0, R.drawable.imgconejo,"Copo de nieve" ));
-        mascotas.add(new Mascota(5, R.drawable.imgvenado,"Mido" ));
-            mascotas.add(new Mascota(6, R.drawable.imggallina,"Pancha" ));
-
-        Collections.sort(mascotas, new Comparator<Mascota>(){
-
-            @Override
-            public int compare(Mascota lhs, Mascota rhs) {
-                return lhs.getRaiting() - rhs.getRaiting();
-            }
-        });
-
-        mascotas.remove(0);
-        Collections.reverse(mascotas);
+        helper = new ConstructorContactos(RankinActivity.this);
+        mascotas = helper.obtenerMascotaCinco();
 
     }
     private void CreaLista() {

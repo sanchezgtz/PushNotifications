@@ -21,7 +21,6 @@
         android:id="@+id/fabBoton"
         android:layout_margin="@dimen/margenFAB"
         app:elevation="@dimen/elevation_nivel6"
-        android:layout_gravity="bottom|end"
         />
 
 </FrameLayout>
