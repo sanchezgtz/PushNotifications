@@ -59,7 +59,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     public ArrayList<Mascota> obtenerMascotasLista(){
         ArrayList<Mascota> listaMascota = new ArrayList<Mascota>();
-        String query = "SELECT * FROM "+ ConstantesBaseDatos.TABLE_MASCOTA ;
+        /*String query = "SELECT * FROM "+ ConstantesBaseDatos.TABLE_MASCOTA ;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         while(cursor.moveToNext()){
@@ -83,7 +83,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             listaMascota.add(item);
         }
 
-        db.close();
+        db.close();*/
 
 
         return listaMascota;
@@ -91,7 +91,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     public ArrayList<Mascota> obtenerMascotaCinco(){
         ArrayList<Mascota> listaMascota = new ArrayList<Mascota>();
-        String query = "SELECT * FROM "+ ConstantesBaseDatos.TABLE_MASCOTA;
+        /*String query = "SELECT * FROM "+ ConstantesBaseDatos.TABLE_MASCOTA;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         while(cursor.moveToNext()){
@@ -127,7 +127,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         });
         Collections.reverse(listaMascota);
 
-        listaMascota= new ArrayList<>(listaMascota.subList(0,5));
+        listaMascota= new ArrayList<>(listaMascota.subList(0,5));*/
 
 
         return listaMascota;
@@ -148,7 +148,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     public int obtenerLikeMascota(Mascota mascota){
         int likes = 0;
-        String query  = "SELECT COUNT("+ConstantesBaseDatos.TABLE_LIKES_NUMERO_LIKES +")" +
+        /*String query  = "SELECT COUNT("+ConstantesBaseDatos.TABLE_LIKES_NUMERO_LIKES +")" +
                 " FROM " + ConstantesBaseDatos.TABLE_LIKES +
                 " WHERE " + ConstantesBaseDatos.TABLE_LIKES_ID_MASCOTA + " = " + mascota.getId();
 
@@ -159,7 +159,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             likes = cursor.getInt(0);
         }
 
-        db.close();
+        db.close();*/
         return  likes;
     }
 }

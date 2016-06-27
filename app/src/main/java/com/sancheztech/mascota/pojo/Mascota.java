@@ -5,50 +5,39 @@ package com.sancheztech.mascota.pojo;
  */
 public class Mascota {
 
-    private int id;
-    private int raiting;
-    private int foto;
-    private String nombre;
+    public String idUser;
+    public int likes;
+    public String urlFoto;
 
-    public int getId() {
-        return id;
+    public Mascota() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Mascota(int likes, String urlFoto) {
+        this.likes = likes;
+        this.urlFoto = urlFoto;
     }
 
-    public int getRaiting() {
-        return raiting;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setRaiting(int raiting) {
-        this.raiting = raiting;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
-    public int getFoto() {
-        return foto;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUrlFoto() {
+        return urlFoto;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Mascota(int raiting, int foto, String nombre) {
-        this.raiting = raiting;
-        this.foto = foto;
-        this.nombre = nombre;
-    }
-
-    public Mascota(){
-
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 }

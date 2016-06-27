@@ -30,14 +30,6 @@
                     android:layout_width="@dimen/heightImagen"
                     android:background="@drawable/huesoblanco">
                 </ImageButton>
-                <TextView
-                    android:id="@+id/txtNombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Firulais"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/textSize"
-                    android:paddingLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_height="wrap_content"

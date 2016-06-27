@@ -1,5 +1,4 @@
 package com.sancheztech.mascota.email;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -16,9 +15,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- * Created by rsanchezgu on 16/05/2016.
+ * Created by Belal on 10/30/2015.
  */
+
+//Class is extending AsyncTask because this class is going to perform a networking operation
 public class SendMail extends AsyncTask<Void,Void,Void> {
+
     //Declaring Variables
     private Context context;
     private Session session;

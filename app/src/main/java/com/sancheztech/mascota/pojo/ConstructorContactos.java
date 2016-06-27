@@ -1,9 +1,11 @@
-package com.sancheztech.mascota.database;
+package com.sancheztech.mascota.pojo;
 
 import android.content.ContentValues;
 import android.content.Context;
 
 import com.sancheztech.mascota.R;
+import com.sancheztech.mascota.database.BaseDatos;
+import com.sancheztech.mascota.database.ConstantesBaseDatos;
 import com.sancheztech.mascota.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -68,7 +70,7 @@ public class ConstructorContactos {
     public void darLikeMascota(Mascota mascota){
         BaseDatos db = new BaseDatos(context);
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ConstantesBaseDatos.TABLE_LIKES_ID_MASCOTA, mascota.getId());
+        contentValues.put(ConstantesBaseDatos.TABLE_LIKES_ID_MASCOTA, mascota.getIdUser());
         contentValues.put(ConstantesBaseDatos.TABLE_LIKES_NUMERO_LIKES, LIKE);
         db.insertarLikeMascota(contentValues);
     }
@@ -76,5 +78,22 @@ public class ConstructorContactos {
     public int obtenerLikesMascota(Mascota mascota){
         BaseDatos db = new BaseDatos(context);
         return db.obtenerLikeMascota(mascota);
+    }
+
+    public ArrayList<Mascota> obtenerPerfil(){
+        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+        /*mascotas.add(new Mascota(7, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(9, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(4, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(1, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(3, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(6, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(8, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(10, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(2, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(5, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(11, R.drawable.imgperro,"Fido" ));
+        mascotas.add(new Mascota(12, R.drawable.imgperro,"Fido" ));*/
+        return mascotas;
     }
 }

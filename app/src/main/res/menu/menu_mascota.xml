@@ -14,4 +14,8 @@
           android:title="@string/opc_acerade"
           android:orderInCategory="200"
           app:showAsAction="never"/>
+    <item android:id="@+id/action_configurarCuenta"
+        android:title="@string/opc_configurar"
+        android:orderInCategory="200"
+        app:showAsAction="never"/>
 </menu>

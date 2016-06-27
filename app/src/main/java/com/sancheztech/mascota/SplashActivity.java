@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.sancheztech.mascota.database.ConstructorContactos;
+import com.sancheztech.mascota.pojo.ConstructorContactos;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,6 +15,7 @@ import java.util.TimerTask;
 public class SplashActivity extends AppCompatActivity {
 
     private boolean status = false;
+    private String perfilInstagram;
     private static final long SPLASH_SCREEN_DELAY = 1500;
     ConstructorContactos helpers;
 
@@ -25,6 +26,11 @@ public class SplashActivity extends AppCompatActivity {
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash);
+
+        ObtenerPerfilShared();
+        if(perfilInstagram.equals("")){
+            crearPerfilShared();
+        }
 
         obtenerShared();
 
@@ -55,6 +61,18 @@ public class SplashActivity extends AppCompatActivity {
         timer.schedule(task, SPLASH_SCREEN_DELAY);
 
 
+    }
+
+    private void crearPerfilShared() {
+        SharedPreferences perfilInstagram = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = perfilInstagram.edit();
+        editor.putString("perfilInstagram", "pato_856");
+        editor.commit();
+    }
+
+    private void ObtenerPerfilShared(){
+        SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        perfilInstagram = misReferencias.getString("perfilInstagram", "");
     }
 
     private void obtenerShared() {

@@ -13,4 +13,5 @@
     <dimen name="margenFAB">16dp</dimen>
     <dimen name="titulo">27dp</dimen>
     <dimen name="mergen">25dp</dimen>
+    <dimen name="top">50dp</dimen>
 </resources>

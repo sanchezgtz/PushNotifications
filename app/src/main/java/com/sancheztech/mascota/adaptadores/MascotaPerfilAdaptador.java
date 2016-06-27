@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sancheztech.mascota.R;
-import com.sancheztech.mascota.database.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,8 +38,11 @@ public class MascotaPerfilAdaptador  extends RecyclerView.Adapter<MascotaPerfilA
     @Override
     public void onBindViewHolder(MsscotaPerfilViewHolder holder, int position) {
         final Mascota mascota = mascotaLista.get(position);
-        holder.tvRankingPerfil.setText(String.valueOf( mascota.getRaiting()));
-        holder.imgFoto.setImageResource(mascota.getFoto());
+        holder.tvRankingPerfil.setText(String.valueOf( mascota.getLikes()));
+        Picasso.with(activity)
+                .load(mascota.getUrlFoto())
+                .placeholder(R.drawable.imgperro)
+                .into(holder.imgFoto);
     }
 
     @Override

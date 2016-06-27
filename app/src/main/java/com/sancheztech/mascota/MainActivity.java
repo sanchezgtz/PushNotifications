@@ -1,22 +1,21 @@
 package com.sancheztech.mascota;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.sancheztech.mascota.adaptadores.MascotaAdapter;
 import com.sancheztech.mascota.adaptadores.PageAdapter;
-import com.sancheztech.mascota.fragment.PerfilFragment;
-import com.sancheztech.mascota.fragment.RecylerViewFragment;
-import com.sancheztech.mascota.pojo.Mascota;
+import com.sancheztech.mascota.vista.fragment.IMascotaRecyclerView;
+import com.sancheztech.mascota.vista.fragment.PerfilFragment;
+import com.sancheztech.mascota.vista.fragment.RecylerViewFragment;
 
 import java.util.ArrayList;
 
@@ -64,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Fragment> agregarFragments(){
         ArrayList<Fragment> fragments = new  ArrayList<Fragment>();
-
         fragments.add(new RecylerViewFragment());
         fragments.add(new PerfilFragment());
 
         return fragments;
+    }
+
+    private String obtenerShared() {
+        SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        return misReferencias.getString("perfilInstagram", "");
     }
 
 
@@ -95,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_rankin:
                 Intent intent = new Intent(this, RankinActivity.class);
                 startActivityForResult(intent, 0);
+                return true;
+            case R.id.action_configurarCuenta:
+                Intent intentConfigurar = new Intent(this, ConfigurarCuentaActivity.class);
+                startActivityForResult(intentConfigurar, 3);
                 return true;
             default:
                 return  false;

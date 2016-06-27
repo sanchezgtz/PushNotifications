@@ -11,8 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sancheztech.mascota.R;
-import com.sancheztech.mascota.database.ConstructorContactos;
+import com.sancheztech.mascota.pojo.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -41,29 +42,20 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
     @Override
     public void onBindViewHolder(final mascotaViewHolder holder, int position) {
         final Mascota mascota =  mascotaLista.get(position);
-        holder.txtNombre.setText(mascota.getNombre());
-        holder.tvRanking.setText(String.valueOf( mascota.getRaiting()));
-        holder.imgFoto.setImageResource(mascota.getFoto());
+        holder.tvRanking.setText(String.valueOf( mascota.getLikes()));
 
-        holder.imgFoto.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(activity, mascota.getNombre(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        Picasso.with(activity)
+                .load(mascota.getUrlFoto())
+                .placeholder(R.drawable.imgperro)
+                .into(holder.imgFoto);
 
 
         holder.btnRanquear.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity, "Te gusta: " + mascota.getNombre(),
+                Toast.makeText(activity, "diste like (demo)",
                         Toast.LENGTH_SHORT).show();
-
-                helper = new ConstructorContactos(activity);
-                helper.darLikeMascota(mascota);
-
-                holder.tvRanking.setText( String.valueOf( helper.obtenerLikesMascota(mascota)));
             }
         });
     }
@@ -75,7 +67,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
 
     public class mascotaViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNombre, tvRanking;
+        TextView tvRanking;
         ImageView imgFoto;
         ImageButton btnRanquear;
 
@@ -83,7 +75,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.mascotaV
         public mascotaViewHolder(View itemView) {
             super(itemView);
 
-            txtNombre = (TextView) itemView.findViewById(R.id.txtNombre);
             tvRanking = (TextView) itemView.findViewById(R.id.tvRanking);
             imgFoto = (ImageView) itemView.findViewById(R.id.imgFoto);
             btnRanquear = (ImageButton) itemView.findViewById(R.id.btnReiting);
