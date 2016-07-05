@@ -11,11 +11,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.sancheztech.mascota.adaptadores.PageAdapter;
-import com.sancheztech.mascota.vista.fragment.IMascotaRecyclerView;
-import com.sancheztech.mascota.vista.fragment.PerfilFragment;
-import com.sancheztech.mascota.vista.fragment.RecylerViewFragment;
+import com.sancheztech.mascota.fragments.PerfilFragment;
+import com.sancheztech.mascota.fragments.RecylerViewFragment;
 
 import java.util.ArrayList;
 
@@ -103,8 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentConfigurar = new Intent(this, ConfigurarCuentaActivity.class);
                 startActivityForResult(intentConfigurar, 3);
                 return true;
-            default:
-                return  false;
+            case R.id.action_recibirNotificaciones:
+                Intent intentNotificacion = new Intent(this, RecibirNotificacionActivity.class);
+                startActivityForResult(intentNotificacion, 4);
+                return true;
         }
+        return  false;
     }
 }

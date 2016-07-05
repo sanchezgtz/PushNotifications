@@ -9,11 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sancheztech.mascota.adaptadores.MascotaAdapter;
-import com.sancheztech.mascota.pojo.ConstructorContactos;
 import com.sancheztech.mascota.pojo.Mascota;
 import com.sancheztech.mascota.presentador.IMascotaPresentador;
 import com.sancheztech.mascota.presentador.MascotaPresentador;
-import com.sancheztech.mascota.vista.fragment.IMascotaRecyclerView;
+import com.sancheztech.mascota.fragments.IMascotaRecyclerView;
 
 import java.util.ArrayList;
 

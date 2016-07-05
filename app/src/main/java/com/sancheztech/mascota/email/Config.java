@@ -5,6 +5,6 @@ package com.sancheztech.mascota.email;
  */
 public class Config {
     //-- colocar usuario y contraseña
-    public static final String EMAIL = "@gmail.com";
-    public static final String PASSWORD = "";
+    public static final String EMAIL = "sietebitstech@gmail.com";
+    public static final String PASSWORD = "daS53egr";
 }

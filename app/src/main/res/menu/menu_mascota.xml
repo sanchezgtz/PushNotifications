@@ -16,6 +16,11 @@
           app:showAsAction="never"/>
     <item android:id="@+id/action_configurarCuenta"
         android:title="@string/opc_configurar"
-        android:orderInCategory="200"
+        android:orderInCategory="300"
         app:showAsAction="never"/>
+    <item android:id="@+id/action_recibirNotificaciones"
+        android:title="@string/opc_enviar"
+        android:orderInCategory="400"
+        app:showAsAction="never"/>
+
 </menu>

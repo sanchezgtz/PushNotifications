@@ -20,11 +20,15 @@
     <string name="nombre_mascota">Fido</string>
     <string name="subject">Correo de prueba Coursera, android</string>
     <string name="tieContrasena">Contraseña</string>
-    <string name="opc_configurar">Configurar cuenta</string>
+    <string name="opc_configurar">Configurar Cuenta</string>
     <string name="tituloConf">Petagram</string>
     <string name="tieUsuario">Escribe tu usuario</string>
     <string name="textoBotonInst">Guardar cuenta</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="opc_enviar">Enviar Notificaciones</string>
+    <string name="notificacion_id">Id:</string>
+    <string name="notificacion_usuarioIns">Usuario de Instagram:</string>
+    <string name="notificacion_token">Token:</string>
 </resources>

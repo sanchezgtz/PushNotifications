@@ -1,7 +1,6 @@
 package com.sancheztech.mascota.presentador;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -11,10 +10,9 @@ import com.sancheztech.mascota.pojo.Mascota;
 import com.sancheztech.mascota.restApi.ConstantesRestApi;
 import com.sancheztech.mascota.restApi.EndpointsApi;
 import com.sancheztech.mascota.restApi.adapter.RestApiAdapter;
-import com.sancheztech.mascota.restApi.model.ImageListResponse;
 import com.sancheztech.mascota.restApi.model.PerfilUserResponse;
 import com.sancheztech.mascota.restApi.model.SearchResponse;
-import com.sancheztech.mascota.vista.fragment.IPerfilRecyclerView;
+import com.sancheztech.mascota.fragments.IPerfilRecyclerView;
 
 import java.util.ArrayList;
 
